@@ -8,6 +8,24 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── DISPLAY FONT: SVN-Servetica (brand-supplied, served locally) ──
+   Drop the two .otf files into assets/fonts/ (see assets/fonts/README.md).
+   Until present, the stack gracefully falls back to Helvetica. */
+@font-face {
+  font-family: 'SVN-Servetica';
+  src: url('assets/fonts/SVN-Servetica-Medium.otf') format('opentype');
+  font-weight: 400 900;   /* Medium widened across the heavy range — real glyphs, no faux-bold */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SVN-Servetica';
+  src: url('assets/fonts/SVN-Servetica-Thin.otf') format('opentype');
+  font-weight: 100 300;   /* Thin for oversized light display moments */
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #F5F7FA;
   --bg2: #FFFFFF;
@@ -19,8 +37,9 @@
   --blue-pale2: #DBEAFE;
   --navy: #0F2050;
   --navy2: #1E3A6E;
-  --red: #E8372A;
-  --red2: #FF4F3B;
+  --cyan: #0E8BFD;        /* bright secondary accent / tints */
+  --red: #EC174C;         /* KTC pink — the brand spark (hero word, Hot badge). Keep < 5% of any view. */
+  --red2: #FF4F7A;
   --green: #16A34A;
   --ink: #1A1A2E;
   --ink2: #374151;
@@ -29,7 +48,21 @@
   --border2: #CBD5E1;
   --white: #FFFFFF;
   --font: 'Be Vietnam Pro', sans-serif;
+  --font-display: 'SVN-Servetica', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+/* Headings use the display face; weight + case carry the contrast (stays corporate). */
+h1, h2, h3,
+.hero-title, .section-title, .job-title,
+.company-name, .form-card-title, .success-title { font-family: var(--font-display); }
+
+/* ── GRADIENT-DUOTONE "GLASSY" ICON SET ──
+   Deep brand-blue base + translucent mint→cyan glass overlay; multiply blend
+   tints the overlap teal for a frosted look. 8 glyphs on a 48×48 grid. */
+.icon { width: 26px; height: 26px; display: inline-block; vertical-align: middle; flex-shrink: 0; }
+.hero-meta-icon .icon { width: 22px; height: 22px; }
+.about-card-icon .icon { width: 30px; height: 30px; }
+.company-link .icon { width: 16px; height: 16px; }
 
 html { scroll-behavior: smooth; }
 body { font-family: var(--font); background: var(--bg); color: var(--ink); overflow-x: hidden; }
@@ -72,7 +105,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--ink); overf
   content: '';
   position: absolute; bottom: -80px; left: -80px;
   width: 400px; height: 400px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(232,55,42,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(236,23,76,0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-inner {
@@ -130,7 +163,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--ink); overf
   font-size: 11px; font-weight: 600; letter-spacing: 0.3px;
 }
 .badge-blue { background: var(--blue-pale); border: 1px solid var(--blue-pale2); color: var(--blue2); }
-.badge-red { background: #FEF2F2; border: 1px solid #FECACA; color: var(--red); }
+.badge-red { background: #FFF1F4; border: 1px solid #FBD0DC; color: var(--red); }
 .badge-gray { background: #F1F5F9; border: 1px solid var(--border2); color: var(--ink3); }
 .badge-green { background: #F0FDF4; border: 1px solid #BBF7D0; color: var(--green); }
 
@@ -341,6 +374,9 @@ footer {
 .footer-lockup { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 12px; }
 .footer-lockup img { height: 28px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.7; }
 .footer-sub { font-size: 12px; color: rgba(255,255,255,0.45); }
+.footer-partners { margin: 22px auto 18px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.12); max-width: 640px; }
+.footer-partners img { max-height: 30px; max-width: 100%; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.55; }
+.footer-partners-text { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.3px; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
@@ -360,10 +396,83 @@ footer {
 </head>
 <body>
 
+<!-- ── ICON SPRITE: gradient-duotone glassy set (target·chat·globe·timer·clock·calendar·monitor·users) ── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-deep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A56DB"/>
+      <stop offset="1" stop-color="#0F2050"/>
+    </linearGradient>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7CF0D9"/>
+      <stop offset="1" stop-color="#0E8BFD"/>
+    </linearGradient>
+  </defs>
+
+  <symbol id="i-calendar" viewBox="0 0 48 48">
+    <rect x="6" y="9" width="36" height="33" rx="5" fill="url(#g-deep)"/>
+    <rect x="14" y="4" width="4" height="9" rx="2" fill="url(#g-deep)"/>
+    <rect x="30" y="4" width="4" height="9" rx="2" fill="url(#g-deep)"/>
+    <rect x="6" y="9" width="36" height="9" fill="url(#g-glass)" style="mix-blend-mode:multiply"/>
+    <rect x="26" y="25" width="10" height="9" rx="2" fill="url(#g-glass)" style="mix-blend-mode:multiply"/>
+  </symbol>
+
+  <symbol id="i-clock" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="18" fill="url(#g-deep)"/>
+    <path d="M24 24 L24 8 A16 16 0 0 1 39 27 Z" fill="url(#g-glass)" style="mix-blend-mode:multiply"/>
+    <path d="M24 24 V13 M24 24 L32 28" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    <circle cx="24" cy="24" r="2.2" fill="#fff"/>
+  </symbol>
+
+  <symbol id="i-monitor" viewBox="0 0 48 48">
+    <rect x="4" y="8" width="40" height="27" rx="4" fill="url(#g-deep)"/>
+    <rect x="9" y="13" width="30" height="17" rx="2" fill="url(#g-glass)" style="mix-blend-mode:multiply"/>
+    <rect x="20" y="35" width="8" height="5" fill="url(#g-deep)"/>
+    <rect x="13" y="40" width="22" height="3.5" rx="1.75" fill="url(#g-deep)"/>
+  </symbol>
+
+  <symbol id="i-users" viewBox="0 0 48 48">
+    <circle cx="19" cy="20" r="7.5" fill="url(#g-deep)"/>
+    <path d="M5 42 a14 14 0 0 1 28 0 Z" fill="url(#g-deep)"/>
+    <circle cx="34" cy="17" r="6" fill="url(#g-glass)" style="mix-blend-mode:multiply"/>
+    <path d="M24 38 a11 11 0 0 1 21 1 Z" fill="url(#g-glass)" style="mix-blend-mode:multiply"/>
+  </symbol>
+
+  <symbol id="i-target" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="18" fill="none" stroke="url(#g-deep)" stroke-width="4"/>
+    <circle cx="24" cy="24" r="10.5" fill="none" stroke="url(#g-glass)" stroke-width="4" style="mix-blend-mode:multiply"/>
+    <circle cx="24" cy="24" r="3.5" fill="url(#g-deep)"/>
+  </symbol>
+
+  <symbol id="i-chat" viewBox="0 0 48 48">
+    <path d="M6 10 h36 a4 4 0 0 1 4 4 v18 a4 4 0 0 1 -4 4 h-22 l-9 7 v-7 h-1 a4 4 0 0 1 -4 -4 v-18 a4 4 0 0 1 4 -4 Z" fill="url(#g-deep)"/>
+    <rect x="13" y="17" width="22" height="4" rx="2" fill="url(#g-glass)" style="mix-blend-mode:multiply"/>
+    <rect x="13" y="25" width="15" height="4" rx="2" fill="url(#g-glass)" style="mix-blend-mode:multiply"/>
+  </symbol>
+
+  <symbol id="i-globe" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="18" fill="url(#g-deep)"/>
+    <path d="M24 6 a18 18 0 0 0 0 36 a9 18 0 0 1 0 -36 Z" fill="url(#g-glass)" style="mix-blend-mode:multiply"/>
+    <g stroke="#fff" stroke-width="1.8" fill="none" opacity="0.9">
+      <ellipse cx="24" cy="24" rx="8" ry="18"/>
+      <line x1="6" y1="24" x2="42" y2="24"/>
+    </g>
+  </symbol>
+
+  <symbol id="i-timer" viewBox="0 0 48 48">
+    <rect x="19" y="3" width="10" height="5" rx="2.5" fill="url(#g-deep)"/>
+    <rect x="22" y="7" width="4" height="5" fill="url(#g-deep)"/>
+    <circle cx="24" cy="28" r="16" fill="url(#g-deep)"/>
+    <path d="M24 28 L24 14 A14 14 0 0 1 37 23 Z" fill="url(#g-glass)" style="mix-blend-mode:multiply"/>
+    <path d="M24 28 V17" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    <circle cx="24" cy="28" r="2.2" fill="#fff"/>
+  </symbol>
+</svg>
+
 <!-- TOPBAR -->
 <nav class="topbar">
   <div class="topbar-logo">
-    <img src="https://i.imgur.com/placeholder-ktc.png" alt="KTC 2026 × FPT Software Korea"
+    <img src="assets/logos/ktc-fpt-lockup.png" alt="KTC 2026 × FPT Software Korea"
       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
       style="height:36px;">
     <!-- Fallback text logo -->
@@ -382,7 +491,7 @@ footer {
     <div class="hero-content">
       <!-- Logo lockup -->
       <div class="hero-lockup">
-        <img src="https://ktc.likelion.edu.vn/og-image.png" alt="KTC 2026 × FPT Software Korea"
+        <img src="assets/logos/ktc-fpt-lockup.png" alt="KTC 2026 × FPT Software Korea"
           style="height:56px; object-fit:contain;"
           onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;gap:14px;\'><span style=\'font-size:22px;font-weight:900;color:var(--navy);\'>K·Tech College <span style=color:var(--blue)>2026</span></span><span style=\'font-size:22px;color:var(--border2)\'>×</span><span style=\'font-size:22px;font-weight:800;color:var(--red)\'>FPT</span><span style=\'font-size:20px;font-weight:700;color:var(--ink2)\'>Software Korea</span></div>'">
       </div>
@@ -402,19 +511,19 @@ footer {
 
       <div class="hero-meta">
         <div class="hero-meta-item">
-          <div class="hero-meta-icon">📅</div>
+          <div class="hero-meta-icon"><svg class="icon"><use href="#i-calendar"/></svg></div>
           <span>Thứ Năm, 19 tháng 6 năm 2026</span>
         </div>
         <div class="hero-meta-item">
-          <div class="hero-meta-icon">🕑</div>
+          <div class="hero-meta-icon"><svg class="icon"><use href="#i-clock"/></svg></div>
           <span>14:00 – 15:00 ICT (60 phút)</span>
         </div>
         <div class="hero-meta-item">
-          <div class="hero-meta-icon">💻</div>
+          <div class="hero-meta-icon"><svg class="icon"><use href="#i-monitor"/></svg></div>
           <span>Online · Zoom</span>
         </div>
         <div class="hero-meta-item">
-          <div class="hero-meta-icon">👥</div>
+          <div class="hero-meta-icon"><svg class="icon"><use href="#i-users"/></svg></div>
           <span>10–20 người · Slot có hạn</span>
         </div>
       </div>
@@ -492,7 +601,7 @@ footer {
         <div class="success-desc">
           Cảm ơn bạn đã đăng ký.<br>
           Kiểm tra email để nhận link Zoom và xác nhận lịch.<br><br>
-          <strong style="color:var(--navy);">📅 Thứ Năm, 19/6 · 14:00 – 15:00 ICT</strong>
+          <strong style="color:var(--navy);">Thứ Năm, 19/6 · 14:00 – 15:00 ICT</strong>
         </div>
       </div>
     </div>
@@ -512,22 +621,22 @@ footer {
       </div>
       <div class="about-cards">
         <div class="about-card">
-          <div class="about-card-icon">🎯</div>
+          <div class="about-card-icon"><svg class="icon"><use href="#i-target"/></svg></div>
           <div class="about-card-title">Nhỏ và tập trung</div>
           <div class="about-card-desc">10–20 người, không bị mất trong đám đông</div>
         </div>
         <div class="about-card">
-          <div class="about-card-icon">💬</div>
+          <div class="about-card-icon"><svg class="icon"><use href="#i-chat"/></svg></div>
           <div class="about-card-title">Hỏi trực tiếp</div>
           <div class="about-card-desc">Không qua trung gian, không câu trả lời mẫu</div>
         </div>
         <div class="about-card">
-          <div class="about-card-icon">🌐</div>
+          <div class="about-card-icon"><svg class="icon"><use href="#i-globe"/></svg></div>
           <div class="about-card-title">Phiên dịch live</div>
           <div class="about-card-desc">KTC dịch Việt–Hàn real-time</div>
         </div>
         <div class="about-card">
-          <div class="about-card-icon">⏱</div>
+          <div class="about-card-icon"><svg class="icon"><use href="#i-timer"/></svg></div>
           <div class="about-card-title">60 phút</div>
           <div class="about-card-desc">Ngắn gọn, đủ để hiểu và quyết định</div>
         </div>
@@ -709,8 +818,8 @@ footer {
     <h2 class="section-title">FPT Software Korea</h2>
     <div class="company-card">
       <div class="company-logo-wrap">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/FPT_logo_2010.svg/200px-FPT_logo_2010.svg.png" alt="FPT"
-          onerror="this.parentElement.innerHTML='<span style=\'font-size:22px;font-weight:900;color:#E8372A;\'>FPT</span>'">
+        <img src="assets/logos/fpt-software-korea.png" alt="FPT Software Korea"
+          onerror="this.parentElement.innerHTML='<span style=\'font-size:22px;font-weight:900;color:#EC174C;\'>FPT</span>'">
       </div>
       <div>
         <div class="company-name">FPT Software Korea</div>
@@ -725,7 +834,7 @@ footer {
         </div>
         <br>
         <a href="https://fptsoftware.kr/" target="_blank" class="company-link">
-          🌐 Xem website công ty →
+          <svg class="icon"><use href="#i-globe"/></svg> Xem website công ty →
         </a>
       </div>
     </div>
@@ -776,6 +885,11 @@ footer {
     <span style="font-size:14px;font-weight:800;color:rgba(255,255,255,0.8);letter-spacing:0.5px;">KTC 2026 — K-Tech College</span>
   </div>
   <div class="footer-sub">Kết nối nhân tài CNTT Việt Nam với doanh nghiệp Hàn Quốc · ktc2026@likelion.vn</div>
+  <div class="footer-partners">
+    <img src="assets/logos/partners-strip.png" alt="Ministry of SMEs and Startups · KOSME · LIKELION · JOBKOREA"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+    <div class="footer-partners-text" style="display:none">Đối tác: Ministry of SMEs and Startups · KOSME · LIKELION · JOBKOREA</div>
+  </div>
 </footer>
 
 <script>
