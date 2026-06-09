@@ -1,0 +1,34 @@
+<!-- @dsCard group="Colors" viewport="700x130" name="Blue & Cyan Tints" subtitle="Royal blue and sky cyan ramps used for fills, washes and accents" -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 22px; background: var(--white); display: flex; flex-direction: column; gap: 14px; }
+  .ramp { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  .sw { height: 56px; border-radius: var(--radius-sm); border: 1px solid var(--border-1); display: flex; align-items: flex-end; padding: 6px; }
+  .t { font-family: var(--font-body); font-size: 9px; font-weight: 600; letter-spacing: 0.3px; }
+</style>
+</head>
+<body>
+<div class="ramp">
+  <div class="sw" style="background:var(--blue-700)"><span class="t" style="color:#fff">700</span></div>
+  <div class="sw" style="background:var(--blue-600)"><span class="t" style="color:#fff">600</span></div>
+  <div class="sw" style="background:var(--blue-500)"><span class="t" style="color:#fff">500</span></div>
+  <div class="sw" style="background:var(--blue-400)"><span class="t" style="color:#fff">400</span></div>
+  <div class="sw" style="background:var(--blue-200)"><span class="t" style="color:var(--blue-700)">200</span></div>
+  <div class="sw" style="background:var(--blue-100)"><span class="t" style="color:var(--blue-700)">100</span></div>
+  <div class="sw" style="background:var(--blue-50)"><span class="t" style="color:var(--blue-700)">50</span></div>
+</div>
+<div class="ramp">
+  <div class="sw" style="background:var(--cyan-600)"><span class="t" style="color:#fff">cyan 600</span></div>
+  <div class="sw" style="background:var(--cyan-500)"><span class="t" style="color:#fff">cyan 500</span></div>
+  <div class="sw" style="background:var(--cyan-200)"><span class="t" style="color:var(--cyan-600)">cyan 200</span></div>
+  <div class="sw" style="background:var(--cyan-100)"><span class="t" style="color:var(--cyan-600)">cyan 100</span></div>
+  <div class="sw" style="background:var(--pink-600)"><span class="t" style="color:#fff">pink 600</span></div>
+  <div class="sw" style="background:var(--pink-200)"><span class="t" style="color:var(--pink-700)">pink 200</span></div>
+  <div class="sw" style="background:var(--pink-100)"><span class="t" style="color:var(--pink-700)">pink 100</span></div>
+</div>
+</body>
+</html>

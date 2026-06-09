@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" viewport="700x130" name="Semantic & Partner" subtitle="Status colors plus the FPT logo's blue / orange / green" -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 22px; background: var(--white); }
+  .row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .sw { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-1); }
+  .chip { height: 56px; }
+  .meta { padding: 8px 10px; }
+  .name { font-family: var(--font-body); font-weight: 700; font-size: 11px; color: var(--navy-800); }
+  .hex { font-family: var(--font-body); font-size: 10px; color: var(--ink-500); margin-top: 1px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="sw"><div class="chip" style="background:var(--green-600)"></div><div class="meta"><div class="name">success</div><div class="hex">#16A34A</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--amber-500)"></div><div class="meta"><div class="name">warning</div><div class="hex">#F97316</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--pink-600)"></div><div class="meta"><div class="name">danger</div><div class="hex">#EC174C</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--fpt-blue)"></div><div class="meta"><div class="name">FPT blue</div><div class="hex">#1E50A2</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--fpt-orange)"></div><div class="meta"><div class="name">FPT orange</div><div class="hex">#F37021</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--fpt-green)"></div><div class="meta"><div class="name">FPT green</div><div class="hex">#66B22E</div></div></div>
+</div>
+</body>
+</html>

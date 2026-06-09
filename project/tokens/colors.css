@@ -1,0 +1,91 @@
+/* ============================================================
+   COLORS — KTC × FPT Coffee Chat
+   Light theme. Brand-mandated palette:
+     navy #0F2050 · blue #1A56DB · pink #EC174C · cyan #0E8BFD
+   ============================================================ */
+
+:root {
+  /* ---- Brand core ---- */
+  --navy-900: #0A1838;
+  --navy-800: #0F2050;   /* primary brand — deep navy */
+  --navy-700: #1E3A6E;
+  --navy-600: #2A4A82;
+
+  --blue-700: #1547B5;
+  --blue-600: #1A56DB;   /* primary action — royal blue */
+  --blue-500: #2563EB;
+  --blue-400: #3B82F6;
+  --blue-200: #DBEAFE;
+  --blue-100: #EBF2FF;
+  --blue-50:  #F4F8FF;
+
+  --cyan-600: #0B73D6;
+  --cyan-500: #0E8BFD;   /* bright accent — sky cyan */
+  --cyan-200: #C7E6FF;
+  --cyan-100: #E6F3FF;
+
+  --pink-700: #C20E3C;
+  --pink-600: #EC174C;   /* KTC accent — magenta-pink */
+  --pink-500: #F23A66;
+  --pink-200: #FBD0DC;
+  --pink-100: #FDEAF0;
+
+  /* ---- Partner / FPT brand (logo-accurate) ---- */
+  --fpt-blue:   #1E50A2;
+  --fpt-orange: #F37021;
+  --fpt-green:  #66B22E;
+
+  /* ---- Semantic status ---- */
+  --green-600: #16A34A;
+  --green-100: #F0FDF4;
+  --green-200: #BBF7D0;
+  --amber-600: #EA580C;
+  --amber-500: #F97316;
+  --amber-100: #FFF7ED;
+  --amber-200: #FED7AA;
+
+  /* ---- Neutrals / ink ---- */
+  --ink-900: #11182B;   /* near-black headings on light */
+  --ink-800: #1A1A2E;
+  --ink-700: #374151;   /* body text */
+  --ink-500: #6B7280;   /* muted / captions */
+  --ink-400: #9AA3B2;
+
+  /* ---- Surfaces ---- */
+  --white:    #FFFFFF;
+  --surface-0: #FFFFFF;  /* cards, raised */
+  --surface-1: #F5F7FA;  /* page background */
+  --surface-2: #EEF2F8;  /* alt section / inset */
+  --surface-3: #EBF2FF;  /* tinted brand wash */
+
+  /* ---- Borders ---- */
+  --border-1: #E2E8F0;
+  --border-2: #CBD5E1;
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components
+     ============================================================ */
+  --color-bg:            var(--surface-1);
+  --color-bg-alt:        var(--surface-2);
+  --color-surface-card:  var(--surface-0);
+
+  --color-brand:         var(--navy-800);
+  --color-primary:       var(--blue-600);
+  --color-primary-hover: var(--blue-500);
+  --color-accent:        var(--pink-600);
+  --color-accent-2:      var(--cyan-500);
+
+  --text-heading:        var(--navy-800);
+  --text-body:           var(--ink-700);
+  --text-muted:          var(--ink-500);
+  --text-on-brand:       var(--white);
+  --text-link:           var(--blue-600);
+
+  --color-border:        var(--border-1);
+  --color-border-strong: var(--border-2);
+  --color-focus-ring:    rgba(26, 86, 219, 0.12);
+
+  --color-success:       var(--green-600);
+  --color-warning:       var(--amber-500);
+  --color-danger:        var(--pink-600);
+}

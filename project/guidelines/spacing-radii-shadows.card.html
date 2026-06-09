@@ -1,0 +1,38 @@
+<!-- @dsCard group="Spacing" viewport="700x160" name="Radii & Shadows" subtitle="Corner radii and the soft blue-tinted elevation system" -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 24px 26px; background: var(--surface-1); display: flex; gap: 40px; flex-wrap: wrap; }
+  .group { display: flex; gap: 16px; align-items: flex-end; }
+  .ra { width: 56px; height: 56px; background: var(--white); border: 1px solid var(--border-2); display: flex; align-items: flex-end; justify-content: center; }
+  .sh { width: 64px; height: 56px; background: var(--white); border-radius: var(--radius-lg); }
+  .lbl { font-family: var(--font-body); font-size: 9px; color: var(--ink-500); padding: 3px; }
+  .cap { font-family: var(--font-body); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-500); width: 100%; margin-bottom: 10px; }
+  .col { display:flex; flex-direction:column; }
+</style>
+</head>
+<body>
+<div class="col">
+  <span class="cap">Radii</span>
+  <div class="group">
+    <div class="ra" style="border-radius:var(--radius-sm)"><span class="lbl">sm 7</span></div>
+    <div class="ra" style="border-radius:var(--radius-lg)"><span class="lbl">lg 12</span></div>
+    <div class="ra" style="border-radius:var(--radius-xl)"><span class="lbl">xl 14</span></div>
+    <div class="ra" style="border-radius:var(--radius-2xl)"><span class="lbl">2xl 16</span></div>
+    <div class="ra" style="border-radius:var(--radius-pill);width:80px"><span class="lbl">pill</span></div>
+  </div>
+</div>
+<div class="col">
+  <span class="cap">Shadows</span>
+  <div class="group">
+    <div class="sh" style="box-shadow:var(--shadow-xs)"></div>
+    <div class="sh" style="box-shadow:var(--shadow-md)"></div>
+    <div class="sh" style="box-shadow:var(--shadow-lg)"></div>
+    <div class="sh" style="box-shadow:var(--shadow-form)"></div>
+  </div>
+</div>
+</body>
+</html>

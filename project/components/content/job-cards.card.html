@@ -1,0 +1,63 @@
+<!-- @dsCard group="Components" viewport="700x660" name="Job Cards" subtitle="Recruitment JD cards for onsite-Korea positions" -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { padding: 28px; background: var(--surface-2); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { JobCard } = window.KTCFPTCoffeeChatDesignSystem_4d8682;
+  function Demo() {
+    return (
+      <div className="grid">
+        <JobCard
+          id="FPT401"
+          title="Embedded Software Developer"
+          level="Fresher / Junior · Onsite Korea"
+          tags={[{label:'C/C++'}, {label:'Automotive'}, {label:'ASPICE', tone:'gray'}, {label:'5 vị trí', tone:'green'}]}
+          info={[
+            {label:'Mức lương', value:'2,300,000 KRW/tháng', highlight:true},
+            {label:'Hỗ trợ nhà', value:'đến 500,000 KRW/tháng'},
+            {label:'Visa', value:'Hỗ trợ E-7'},
+          ]}
+          requirements={[
+            'Tốt nghiệp CNTT, Điện tử, Hệ thống nhúng hoặc tương đương',
+            'Nền tảng lập trình C/C++, Java hoặc Python',
+            'Giao tiếp tiếng Anh hoặc tiếng Hàn (bắt buộc)',
+          ]}
+          benefits={['Đào tạo 3–6 tháng về Automotive', 'Thưởng 2–3 lần/năm']}
+          href="#" />
+        <JobCard
+          id="FPT402"
+          title="AI/ML Engineer"
+          level="1+ năm kinh nghiệm · Onsite Korea"
+          tags={[{label:'Python'}, {label:'PyTorch / TF'}, {label:'MLOps', tone:'gray'}, {label:'Hot', tone:'pink'}]}
+          info={[
+            {label:'Mức lương', value:'4,000,000 – 6,000,000 KRW', highlight:true},
+            {label:'Hỗ trợ nhà', value:'đến 500,000 KRW/tháng'},
+            {label:'Visa', value:'Hỗ trợ E-7'},
+          ]}
+          requirements={[
+            '1+ năm kinh nghiệm AI/ML, thành thạo Python',
+            'Kinh nghiệm TensorFlow, PyTorch hoặc Scikit-learn',
+            'NLP, Computer Vision, GenAI / LLM là lợi thế',
+          ]}
+          benefits={['Dự án AI quy mô lớn tại Hàn', 'Thưởng 2–3 lần/năm']}
+          href="#" />
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

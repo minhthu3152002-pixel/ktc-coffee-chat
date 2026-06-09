@@ -1,0 +1,37 @@
+/* ============================================================
+   EFFECTS — shadows, borders, transitions, gradients
+   KTC × FPT Coffee Chat
+   ============================================================ */
+
+:root {
+  /* ---- Elevation (soft, blue-tinted) ---- */
+  --shadow-xs:  0 1px 8px rgba(0,0,0,0.06);
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md:  0 4px 16px rgba(26,86,219,0.10);
+  --shadow-lg:  0 8px 32px rgba(26,86,219,0.12);
+  --shadow-form: 0 8px 40px rgba(26,86,219,0.10), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-cta: 0 6px 20px rgba(26,86,219,0.30);
+
+  /* ---- Borders ---- */
+  --border-hair:  1px solid var(--border-1);
+  --border-card:  1px solid var(--border-1);
+
+  /* ---- Focus ---- */
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+
+  /* ---- Motion ---- */
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-fast:    0.15s; /* @kind other */
+  --dur-normal:  0.2s; /* @kind other */
+
+  /* ---- Signature gradients ---- */
+  --grad-hero:  linear-gradient(160deg, #EBF2FF 0%, #F5F7FA 50%, #FFFFFF 100%); /* @kind color */
+  --grad-ktc:   linear-gradient(135deg, #EC174C 0%, #8B2FA0 50%, #1A56DB 100%); /* @kind color */ /* KTC pink→blue */
+  --grad-brand: linear-gradient(135deg, var(--navy-800) 0%, var(--blue-600) 100%); /* @kind color */
+
+  /* ---- Grain texture ----
+     Subtle monochrome fractal-noise tile. Layer OVER a surface colour:
+       background: var(--noise), var(--surface-2);
+     Adds tactile grain to the cool-blue section backgrounds. */
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.16'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}

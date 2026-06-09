@@ -1,0 +1,35 @@
+/* ============================================================
+   SPACING & LAYOUT — KTC × FPT Coffee Chat
+   8px-based rhythm with a few half-steps.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale ---- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;   /* default section padding-y */
+  --space-24: 96px;
+
+  /* ---- Radii ---- */
+  --radius-sm:   7px;   /* buttons, inputs */
+  --radius-md:   9px;   /* icon tiles */
+  --radius-lg:   12px;  /* small cards */
+  --radius-xl:   14px;  /* job / feature cards */
+  --radius-2xl:  16px;  /* form card, big panels */
+  --radius-pill: 100px; /* badges, eyebrows */
+
+  /* ---- Layout ---- */
+  --container:      1100px;  /* max content width */
+  --gutter:         48px;    /* desktop side padding */
+  --gutter-mobile:  20px;
+  --topbar-h:       64px;
+}

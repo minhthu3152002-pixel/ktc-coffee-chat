@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Neutrals & Ink" subtitle="Text inks and surface greys for the light theme" -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 22px; background: var(--white); }
+  .row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .sw { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-1); }
+  .chip { height: 60px; }
+  .meta { padding: 8px 10px; }
+  .name { font-family: var(--font-body); font-weight: 700; font-size: 11px; color: var(--navy-800); }
+  .hex { font-family: var(--font-body); font-size: 10px; color: var(--ink-500); margin-top: 1px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="sw"><div class="chip" style="background:var(--ink-900)"></div><div class="meta"><div class="name">ink 900</div><div class="hex">#11182B</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--ink-700)"></div><div class="meta"><div class="name">ink 700</div><div class="hex">body</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--ink-500)"></div><div class="meta"><div class="name">ink 500</div><div class="hex">muted</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--surface-2)"></div><div class="meta"><div class="name">surface 2</div><div class="hex">#EEF2F8</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--surface-1)"></div><div class="meta"><div class="name">surface 1</div><div class="hex">page bg</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--white);border-bottom:1px solid var(--border-1)"></div><div class="meta"><div class="name">white</div><div class="hex">cards</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/* ============================================================
+   BASE — minimal element defaults for the design system.
+   Safe to ship: only sets typographic defaults on html/body
+   and a sensible box model. No opinionated resets on every tag.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--text-body);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-heading);
+  line-height: var(--lh-tight);
+  margin: 0;
+}
+
+a { color: var(--text-link); text-decoration: none; }
+
+::selection { background: var(--pink-200); color: var(--navy-800); }

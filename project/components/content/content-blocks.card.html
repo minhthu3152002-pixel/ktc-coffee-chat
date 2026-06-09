@@ -1,0 +1,45 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Content Blocks" subtitle="SectionHeading, FeatureCard, MetaItem & FaqItem" -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { padding: 28px; background: var(--white); }
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 22px 0; }
+  .meta { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+  .faqs { display: flex; flex-direction: column; gap: 10px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { SectionHeading, FeatureCard, MetaItem, FaqItem, Icon } = window.KTCFPTCoffeeChatDesignSystem_4d8682;
+  function Demo() {
+    return (
+      <div>
+        <SectionHeading eyebrow="Về Coffee Chat" title="Không phải webinar. Không có script."
+          desc="Buổi gặp gỡ nhỏ giữa IT developer Việt Nam và đại diện FPT Software Korea." />
+        <div className="features">
+          <FeatureCard icon={<Icon name="target" size={30} />} title="Nhỏ và tập trung" desc="10–20 người, không bị mất trong đám đông" />
+          <FeatureCard icon={<Icon name="chat" size={30} />} title="Hỏi trực tiếp" desc="Không qua trung gian, không câu trả lời mẫu" />
+        </div>
+        <div className="meta">
+          <MetaItem icon={<Icon name="calendar" size={22} />}>Thứ Năm, 19 tháng 6 năm 2026</MetaItem>
+          <MetaItem icon={<Icon name="clock" size={22} />}>14:00 – 15:00 ICT (60 phút)</MetaItem>
+        </div>
+        <div className="faqs">
+          <FaqItem q="Buổi này có phí không?" a="Miễn phí hoàn toàn." defaultOpen />
+          <FaqItem q="Chưa apply KTC vẫn tham gia được không?" a="Được. Bạn có thể tham gia để tìm hiểu trước." />
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

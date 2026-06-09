@@ -1,0 +1,31 @@
+/* ============================================================
+   FONTS — KTC × FPT Coffee Chat
+   ------------------------------------------------------------
+   Headline: SVN-Servetica  (authentic — Medium + Thin weights,
+     supplied by the brand, served locally from assets/fonts/).
+   Body: Be Vietnam Pro (Google Fonts, full Vietnamese family).
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap');
+
+/* ---- SVN-Servetica (headline) ---------------------------------
+   Two weights ship: Thin and Medium. Medium is the workhorse —
+   its range is widened to 400–900 so heavy headings render the
+   real Medium glyphs instead of a faux-bold synthesis. Thin
+   covers the light end (100–300) for oversized display moments. */
+
+@font-face {
+  font-family: 'SVN-Servetica';
+  src: url('../assets/fonts/SVN-Servetica-Medium.otf') format('opentype');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SVN-Servetica';
+  src: url('../assets/fonts/SVN-Servetica-Thin.otf') format('opentype');
+  font-weight: 100 300;
+  font-style: normal;
+  font-display: swap;
+}
